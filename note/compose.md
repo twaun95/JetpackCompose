@@ -23,11 +23,21 @@ Compose 는 Fragment 를 사용하지 않음.
 
 Scope Safety - 사용가능한 Scope만 작성할 수 있도록 안전성 제공.
 
+### MaterialTheme
+- 컴포즈는 Material Design 디자인시스템 구현을 제공한다.
+- 이 MaterialTheme 을 통해 Material Component 들을 제공한다.
+
+### Contents Slot
+- 하위 컴포넌트(Composable content)를 구성할 수 있도록 람다 형태로 제공.
+- content: @Composable () -> Unit
+
+### Scaffold
+- TopBar, BottomBar 등 여러 슬롯과 다양한 구성요소를 통해 편리한 레이아웃을 구성할 수 있도록한다.
+
 ### 컴포넌트 명명
 - 파스칼케이스(카멜케이스+첫글자대문자)
 - =클래스네이밍 컨벤션
 - Preview는 뒤에 Preview를 붙인다.
-
 
 ### Preview
 - 미리보기 뷰. 여러 개 동시 띄울 수 있음. 
@@ -36,14 +46,20 @@ Scope Safety - 사용가능한 Scope만 작성할 수 있도록 안전성 제공
 - showBackground : 배경 표시
 - showSystemUi : 디바이스 형태 표시
 
-## Component
-
-### Surface
-### Scaffold
 ### Modifier
 - 컴포넌트 변형자 (모든 컴포넌트에 작성 가능하고, 각 컴포넌트 마다 다른 것으로 보임)
 - setMaxSize, setMaxHeight, setMaxWidth..(matchParent 같은 크기를 지정해줌)
 - 호출 순서대로 적용되기 때문에 작성하는 순서를 생각할 필요 있음.
+
+### Scope Safety
+- 특정 Composable 에서만 사용할 수 있는 Modifier 유형이 있다.
+- 동작하지 않는 Modifier 를 작성하지 못하도록 해준다.
+
+
+### Surface
+- 컨테이너 역할
+- 색, 테두리, 그림자 등 지정
+
 
 ### Column, Low
 - Vertical, Horizontal
@@ -54,7 +70,7 @@ Scope Safety - 사용가능한 Scope만 작성할 수 있도록 안전성 제공
 - 스크롤 가능한 Column, Low
 
 ### Box
-- 여러 컴포넌트를 겹쳐서 사용할 때
+- 여러 컴포넌트를 순서대로 쌓아서 배치
 - (FrameLayout 과 같은?)
 
 ### Text
